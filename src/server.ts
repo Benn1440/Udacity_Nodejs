@@ -36,9 +36,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
         res.status(400).send(" invalid request, please insert imageUrl");
       }
 
-      const filteredImage = await filterImageFromURL(image_url);
-      res.status(200).sendFile(filteredImage, () => {
-        deleteLocalFiles([filteredImage]);
+      const filtered_image = await filterImageFromURL(image_url);
+      res.status(200).sendFile(filtered_image, () => {
+        deleteLocalFiles([filtered_image]);
       });
 
   });
